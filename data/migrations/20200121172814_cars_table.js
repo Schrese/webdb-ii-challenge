@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex,schema.createTable('car', tbl => {
+  return knex.schema.createTable('car', tbl => {
     //unique id that increments automatically
     tbl.increments();
 

@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       host: 'localhost',
       user: 'Not Main',
-      password: process.env.PASS,
+      password: 'password1',
       database: 'car'
     },
     useNullAsDefault: true,

@@ -3,9 +3,20 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './dev.sqlite3'
+      host: 'localhost',
+      user: 'Not Main',
+      password: process.env.PASS,
+      database: 'car'
+    },
+    useNullAsDefault: true,
+
+    migrations: {
+      directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
     }
   },
 

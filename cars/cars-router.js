@@ -30,6 +30,17 @@ router.post('/', (req, res) => {
         })
 })
 
-
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const changes = req.body;
+    db('car').where({ id: id }).update(changes)
+        .then(updatedCar => {
+            res.status(200).json({ message: 'Car was updated' })
+        })
+        .catch(err => {
+            console.log('error updating car', err)
+            res.status(500).json({ errorMessage: 'Car could not be updated' })
+        })
+})
 
 module.exports = router;
